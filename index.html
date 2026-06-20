@@ -30,6 +30,12 @@
     // Tarea 3 (Lógica SQL): Corrige esta consulta para insertar un usuario.
     // Consulta actual: INSERT INTO estudiantes (nombre, correo) VALUES (userName);
     // Tu corrección: 
+    //   INSERT INTO estudiantes (nombre, correo) VALUES (?, ?);
+    //   -- Se ejecuta como consulta parametrizada (prepared statement),
+    //   -- pasando [userName, userEmail] como parámetros en vez de
+    //   -- concatenar las variables directamente en el string SQL.
+    //   -- Esto corrige que faltaba el valor del correo y evita inyección SQL.
+    
 
     function loadUsers() {
         const userList = document.getElementById('userList');
